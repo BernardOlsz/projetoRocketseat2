@@ -1,0 +1,206 @@
+/*----------RESET TA PÁGINA---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/*----------DARK MODE----------*/
+
+:root {
+  --text-color: white;
+  --background: url(../assets/bg-desktop.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color-hover: rgba(255, 255, 255, 0.02);
+  --social-color: rgba(255, 255, 255, 0.2);
+  --rocket-hover: rgba(255, 255, 255, 0.5);
+  --switch: url(../assets/moon-stars.svg);
+}
+
+/*----------LIGHT MODE----------*/
+
+.light {
+  --text-color: black;
+  --background: url(../assets/bg-desktop-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --social-color: rgba(0, 0, 0, 0.1);
+  --rocket-hover: rgba(0, 0, 0, 0.5);
+  --switch: url(../assets/sun.svg);
+}
+
+.light #switch button {
+  left: 1.75rem;
+}
+
+/*----------  BODY  ----------*/
+
+body {
+  background: var(--background);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  transition: background 0.3s;
+}
+
+body * {
+  font-family: "Inter", sans-serif;
+  color: var(--text-color);
+}
+
+/*----------  CONTAINER   ----------*/
+
+#container {
+  width: 360px;
+  margin: 56px auto 0;
+  padding: 0 24px;
+}
+
+/*----------    PROFILE   ----------*/
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+.instagram {
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.instagram:hover {
+  color: var(--rocket-hover);
+}
+
+/*----------    BOTÃO DARK/LIGHT MODE   ----------*/
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 36px;
+  height: 36px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  background-image: var(--switch);
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  transition: left 0.1s;
+}
+
+#switch span {
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: block;
+  border-radius: 9999px;
+  transition: background 0.2s;
+}
+
+#switch span:hover {
+  background-color: var(--surface-color-hover);
+}
+
+#switch button:hover {
+  background-color: rgb(232, 232, 232);
+  width: 37px;
+  height: 37px;
+}
+
+/*----------    LISTA   ----------*/
+
+#list ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0;
+}
+
+ul li a {
+  border: 1px solid brown;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: var(--surface-color);
+  border: 1px solid var(--stroke-color);
+  border-radius: 8px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+ul li a:hover {
+  background-color: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/*----------    SOCIAL LINKS    ----------*/
+
+#social {
+  display: flex;
+  padding: 24px 0;
+  gap: 4px;
+  font-size: 24px;
+  justify-content: center;
+}
+
+#social a {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 12px;
+  transition: background-color 1s;
+  border-radius: 50%;
+}
+#social a:hover {
+  background-color: var(--social-color);
+  padding: 12px;
+}
+
+/*----------    FOOTER    ----------*/
+
+footer {
+  padding: 24px 0;
+  text-align: center;
+}
+
+#linkRocket {
+  transition: color 0.5s;
+}
+
+#linkRocket:hover {
+  color: var(--rocket-hover);
+}
